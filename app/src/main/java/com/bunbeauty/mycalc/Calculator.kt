@@ -22,7 +22,7 @@ class Calculator : ICalculator {
         }
         return value / userValue
     }
-
+    //Override-ключевое слово для переопределения
     override fun calculate(sign: Sign, firstValue: Int, secondValue: Int): String {
         return when (sign) {
             Sign.PLUS -> {
