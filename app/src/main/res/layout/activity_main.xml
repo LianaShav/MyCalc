@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    1. Поменять цвет(background) layout на белый
+    2. Поменять цвет(background)
+        activity_main_et_first_value, activity_main_et_second_value на серый
+    3. Поменять цвет activity_main_tv_result, activity_main_tv_sign на черный,
+        размер поменять на 20sp
+    4. Добавить отступ кнопке СНИЗУ 20dp
+    5. Добавить надпись Calculator с id activity_main_tv_title,
+        размером в 36sp, цвет черный (подсказка нужно создать текст вью)
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/activity_main_et_first_value"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:inputType="number"
+        android:text="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/activity_main_et_second_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/activity_main_et_second_value"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:inputType="number"
+        android:text="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/activity_main_tv_sign"
+        app:layout_constraintStart_toEndOf="@id/activity_main_et_first_value"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/activity_main_tv_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/activity_main_tv_result"
+        app:layout_constraintStart_toEndOf="@id/activity_main_et_second_value"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/activity_main_tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="result"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/activity_main_tv_sign"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/activity_main_btn_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/activity_main_tv_title"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Calculator"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_main_et_second_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/activity_main_tv_plus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textColor="@color/black"
+        android:background="@color/yellow"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/activity_main_btn_calculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_et_first_value"
+        app:layout_constraintEnd_toStartOf="@id/activity_main_tv_minus"
+        />
+
+    <TextView
+        android:id="@+id/activity_main_tv_minus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/activity_main_btn_calculate"
+        app:layout_constraintStart_toEndOf="@id/activity_main_tv_plus"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_et_first_value"
+        app:layout_constraintEnd_toStartOf="@id/activity_main_tv_multiply"
+        />
+
+    <TextView
+        android:id="@+id/activity_main_tv_multiply"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="*"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/activity_main_btn_calculate"
+        app:layout_constraintStart_toEndOf="@id/activity_main_tv_minus"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_et_first_value"
+        app:layout_constraintEnd_toStartOf="@id/activity_main_tv_divide"
+        />
+
+    <TextView
+        android:id="@+id/activity_main_tv_divide"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/activity_main_btn_calculate"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_et_first_value"
+        app:layout_constraintStart_toEndOf="@id/activity_main_tv_multiply"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
